@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-aqjiunjg-gitops
+  description: This is GitOps manifest for go-aqjiunjg   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-aqjiunjg
+    backstage.io/kubernetes-id: go-aqjiunjg 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: go-aqjiunjg-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-aqjiunjg
